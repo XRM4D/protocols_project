@@ -3,11 +3,8 @@ from sqlalchemy.orm import sessionmaker
 
 from config import SessionLocal
 
+import databases
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-        print(db)
-    finally:
-        db.close()
+
+if __name__ == '__main__':
+    databases.init_schema()
