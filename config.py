@@ -1,9 +1,16 @@
-import os
+import psycopg2
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql+psycopg2://school:School1234*@79.174.88.238:15221/school_db"  # Replace with your PostgreSQL database URL
+DB_HOST = '79.174.88.238'
+DB_PORT = 15221
+DB_NAME = 'school_db'
+DB_USER = 'school'
+DB_PASSWORD = 'School1234*'
 
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+connect = psycopg2.connect(
+    dbname=DB_NAME,
+    host = DB_HOST,
+    port = DB_PORT,
+    user = DB_USER,
+    password = DB_PASSWORD
+)
