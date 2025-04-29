@@ -14,10 +14,12 @@ CREATE TABLE IF NOT EXISTS globa_kutsenko.cars (
 
 CREATE TABLE IF NOT EXISTS globa_kutsenko.customers (
  customer_id INTEGER PRIMARY KEY,
- rating INTEGER 
+ rating FLOAT,
+ email TEXT
 );
 
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE IF NOT EXISTS globa_kutsenko.orders (
+ order_id INTEGER PRIMARY KEY,
  start_adress TEXT,
  end_adress TEXT,
  orderTime TIMESTAMP, 
